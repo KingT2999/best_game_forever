@@ -7,8 +7,8 @@ player.key_check();
 
 
 
-let billy = new Image();
-billy.src = "https://static.wikia.nocookie.net/disney/images/4/41/Profile_-_Bill_Cipher.png/revision/latest?cb=20190318132904";
+let bill = new Image();
+bill.src = "https://static.wikia.nocookie.net/disney/images/4/41/Profile_-_Bill_Cipher.png/revision/latest?cb=20190318132904";
 
 
 // Main Loop
