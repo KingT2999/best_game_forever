@@ -1,22 +1,22 @@
-function Player(){
-	this.x = 1000;
-	this.y = 100;
+class Player extends GameObj {
+	constructor(x, y, width, height){
+		super(x, y, width, height);
+		this.speed = 10;
 
-	this.speed = 10;
+		this.move_left = false;
+		this.move_right = false;
+		this.move_up = false;
+		this.move_down = false;
 
-	this.move_left = false;
-	this.move_right = false;
-	this.move_up = false;
-	this.move_down = false;
+		this.r = Math.floor(Math.random() * 255) + 1;
+		this.direct_r = 1;
+		this.g = Math.floor(Math.random() * 255) + 1;
+		this.direct_g = 1;
+		this.b = Math.floor(Math.random() * 255) + 1;
+		this.direct_b = 1;
+	}
 
-	this.r = Math.floor(Math.random() * 255) + 1;
-	this.direct_r = 1;
-	this.g = Math.floor(Math.random() * 255) + 1;
-	this.direct_g = 1;
-	this.b = Math.floor(Math.random() * 255) + 1;
-	this.direct_b = 1;
-
-	this.key_check = function(){
+	key_check(){
 		document.addEventListener('keydown', (event) => {
 		const keyCode = event.code;
 
@@ -50,16 +50,16 @@ function Player(){
 			this.move_down = false;
 		}
 		}, false);
-	};
+	}
 
-	this.move = function(){
+	move(){
 		if (this.move_left){this.x-=this.speed};
 		if (this.move_right){this.x+=this.speed};
 		if (this.move_up){this.y-=this.speed};
 		if (this.move_down){this.y+=this.speed};
-	};
+	}
 
-	this.color = function(){
+	color(){
 		if (0 >= this.r || this.r >= 255){this.direct_r = -this.direct_r};
 		if (0 >= this.g || this.g >= 255){this.direct_g = -this.direct_g};
 		if (0 >= this.b || this.b >= 255){this.direct_b = -this.direct_b};
@@ -67,5 +67,5 @@ function Player(){
 		this.r += this.direct_r * this.speed;
 		this.g += this.direct_g * this.speed;
 		this.b += this.direct_b * this.speed;
-	};
+	}
 };

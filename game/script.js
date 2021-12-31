@@ -1,6 +1,6 @@
 let camera = new Camera();
 
-let player = new Player();
+let player = new Player(1000, 250, 100, 100);
 
 player.key_check();
 

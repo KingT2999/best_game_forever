@@ -1,5 +1,6 @@
 // ENGINE COMPONENTS
 
+// coordinates
 class Vector2 {
 	constructor(x, y) {
 		this.x = (x === undefined) ? 0 : x;
@@ -38,5 +39,16 @@ class Vector2 {
 		vector.x = this.x * cos - this.y * sin;
 		vector.y = this.x * sin + this.y * cos;
 		return vector;
+	}
+}
+
+
+// Empty Game Object
+class GameObj extends Vector2 {
+	constructor(x, y, width, height){
+		super(x, y);
+
+		this.width = width;
+		this.height = height;
 	}
 }
