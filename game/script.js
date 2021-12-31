@@ -30,7 +30,7 @@ setInterval(function(){
 
 
 	// Draw Player
-	ctx.drawImage(billy, player.x - camera.x, player.y - camera.y, 100, 100);
+	ctx.drawImage(bill, player.x - camera.x, player.y - camera.y, 100, 100);
 	ctx.fillStyle = `rgb(${player.r}, ${player.g}, ${player.b})`;
 	ctx.fillRect(player.x - camera.x, player.y - camera.y + 100, 100, 100);
 
