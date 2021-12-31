@@ -1,14 +1,14 @@
 let camera = new Camera();
 
-let player = new Player(1000, 250, 100, 100);
+let player = new Player(1000, 100, 100, 100);
 
 player.key_check();
 
 
 
 
-let bill = new Image();
-bill.src = "https://static.wikia.nocookie.net/disney/images/4/41/Profile_-_Bill_Cipher.png/revision/latest";
+let bill = new Sprite(0, 0, 100, 100);
+bill.img.src = "https://static.wikia.nocookie.net/disney/images/4/41/Profile_-_Bill_Cipher.png/revision/latest";
 
 
 // Main Loop
@@ -30,9 +30,9 @@ setInterval(function(){
 
 
 	// Draw Player
-	ctx.drawImage(bill, player.x - camera.x, player.y - camera.y, 100, 100);
+	ctx.drawImage(bill.img, player.x - camera.x, player.y - camera.y, bill.width, bill.height);
 	ctx.fillStyle = `rgb(${player.r}, ${player.g}, ${player.b})`;
-	ctx.fillRect(player.x - camera.x, player.y - camera.y + 100, 100, 100);
+	ctx.fillRect(player.x - camera.x, player.y - camera.y + 100, player.width, player.height);
 
 	player.move();
 	player.color();

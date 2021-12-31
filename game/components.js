@@ -52,3 +52,14 @@ class GameObj extends Vector2 {
 		this.height = height;
 	}
 }
+
+
+// Sprites
+class Sprite extends GameObj {
+	constructor(x, y, width, height, img_src){
+		super(x, y, width, height);
+
+		this.img = new Image();
+		this.img.src = img_src;
+	}
+}
