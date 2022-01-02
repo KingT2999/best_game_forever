@@ -1,5 +1,3 @@
-let camera = new Camera();
-
 let player = new Player(1000, 100, 100, 100);
 
 player.key_check();
@@ -30,9 +28,9 @@ setInterval(function(){
 
 
 	// Draw Player
-	ctx.drawImage(bill.img, player.x - camera.x, player.y - camera.y, bill.width, bill.height);
+	ctx.drawImage(bill.img, player.l_x, player.l_y, bill.width, bill.height);
 	ctx.fillStyle = `rgb(${player.r}, ${player.g}, ${player.b})`;
-	ctx.fillRect(player.x - camera.x, player.y - camera.y + 100, player.width, player.height);
+	ctx.fillRect(player.l_x, player.l_y + 100, player.width, player.height);
 
 	player.move();
 	player.color();

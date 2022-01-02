@@ -51,6 +51,14 @@ class GameObj extends Vector2 {
 		this.width = width;
 		this.height = height;
 	}
+
+	get l_x(){
+		return this.x - camera.x;
+	}
+
+	get l_y(){
+		return this.y - camera.y;
+	}
 }
 
 
