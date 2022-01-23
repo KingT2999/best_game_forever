@@ -45,11 +45,16 @@ class Vector2 {
 
 // Empty Game Object
 class GameObj extends Vector2 {
+	static objects = [];
+
 	constructor(x, y, width, height){
 		super(x, y);
 
 		this.width = width;
 		this.height = height;
+
+
+		GameObj.objects.push(this);
 	}
 
 	get l_x(){
@@ -63,11 +68,22 @@ class GameObj extends Vector2 {
 
 
 // Sprites
-class Sprite extends GameObj {
-	constructor(x, y, width, height, img_src){
-		super(x, y, width, height);
+class Sprite {
+	constructor(gameObj, img_src){
+		this.gameObj = gameObj;
+		GameObj.objects.push(this);
 
 		this.img = new Image();
 		this.img.src = img_src;
+	}
+}
+
+// Scripts
+class Script {
+	constructor(gameObj, script_src){
+		this.gameObj = gameObj;
+		GameObj.objects.push(this);
+
+		this.script_src = script_src;
 	}
 }

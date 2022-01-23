@@ -3,12 +3,6 @@ let player = new Player(1000, 100, 100, 100);
 player.key_check();
 
 
-
-
-let bill = new Sprite(0, 0, 100, 100);
-bill.img.src = "https://static.wikia.nocookie.net/disney/images/4/41/Profile_-_Bill_Cipher.png/revision/latest";
-
-
 // Main Loop
 setInterval(function(){
 	camera.follow(player.x - 50, player.y);
@@ -28,7 +22,6 @@ setInterval(function(){
 
 
 	// Draw Player
-	ctx.drawImage(bill.img, player.l_x, player.l_y, bill.width, bill.height);
 	ctx.fillStyle = `rgb(${player.r}, ${player.g}, ${player.b})`;
 	ctx.fillRect(player.l_x, player.l_y + 100, player.width, player.height);
 
